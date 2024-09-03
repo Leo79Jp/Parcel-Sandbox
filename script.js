@@ -43,22 +43,34 @@ console.log(divContenedor);
 let imagen = document.querySelectorAll(".imagen");
 let enlaseImagen = document.querySelectorAll(".enlaseImagen");
 // URL para copiar y pegar en cada prompt!
-// 
+// https://i.pinimg.com/736x/bf/95/34/bf953419d76bf747cba69b55e6e03957.jpg
 
-// https://www.latercera.com/resizer/v2/KCV3Q7JXTBEMVAJVBDONB6YIFE.png?quality=80&smart=true&auth=4f985fb0c3a8eab1ec9e2aee0778fc8733dfd7344773246f819ad4d6f2cba079&width=790&height=790
+// https://i.pinimg.com/736x/ed/a5/53/eda5531538101e2e5e3babbd75f811eb.jpg
 
-// https://i.scdn.co/image/ab67616d0000b273cfeae645958e9248abff0710
+// https://i.pinimg.com/474x/6f/a8/15/6fa815b16e921cd93a59fdd2d9816989.jpg
 
 for (let i=0; i < imagen.length; i++){
   let valorIngresado = prompt(`Ingrese la direccion de la imagen ${i+1}: `);
+  // carga las imagenes por defecto
+  if (i==0 && valorIngresado === ""){
+    valorIngresado = 'https://i.pinimg.com/736x/bf/95/34/bf953419d76bf747cba69b55e6e03957.jpg'
+  }
+  if (i==1 && valorIngresado === ""){
+    valorIngresado = 'https://i.pinimg.com/736x/ed/a5/53/eda5531538101e2e5e3babbd75f811eb.jpg'
+  }
+  if (i==2 && valorIngresado === ""){
+    valorIngresado = 'https://i.pinimg.com/474x/6f/a8/15/6fa815b16e921cd93a59fdd2d9816989.jpg'
+  }
+
   imagen[i].setAttribute('src', valorIngresado)
+  // carga la direccion de los enlases
   if (i == 0){
-    enlaseImagen[i].setAttribute('href', 'https://www.google.com/')
+    enlaseImagen[i].setAttribute('href', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Far.pinterest.com%2Fpin%2F899101513088882697%2F&psig=AOvVaw3GeEu98cVfiAP4pB49A8bH&ust=1725476892643000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCPj-_b28p4gDFQAAAAAdAAAAABAE')
   }else if (i == 1){
-    enlaseImagen[i].setAttribute('href', 'https://www.google.com/')
+    enlaseImagen[i].setAttribute('href', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F222928250282939928%2F&psig=AOvVaw2tVxnLx4DwkoQ563FFJyrn&ust=1725477032457000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOjJq5u9p4gDFQAAAAAdAAAAABAP')
 
   }else if (i == 2){
-    enlaseImagen[i].setAttribute('href', 'https://www.google.com/')
+    enlaseImagen[i].setAttribute('href', 'https://www.google.com/url?sa=i&url=https%3A%2F%2Fbr.pinterest.com%2Fpin%2F564498134536053564%2F&psig=AOvVaw2tVxnLx4DwkoQ563FFJyrn&ust=1725477032457000&source=images&cd=vfe&opi=89978449&ved=0CBQQjRxqFwoTCOjJq5u9p4gDFQAAAAAdAAAAABAJ')
   }
   enlaseImagen[i].setAttribute('target', '_blank')  
 }
